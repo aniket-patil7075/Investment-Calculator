@@ -16,7 +16,7 @@ function handleChange(inputIdentifier,newValue){
     setUserInput((prevUserInput)=>{
         return{
             ...prevUserInput,
-            [inputIdentifier]:newValue,
+            [inputIdentifier]:+newValue,
         }
     })
 }
@@ -25,7 +25,7 @@ function handleChange(inputIdentifier,newValue){
     <>
       <Header/>
       <UserInput handleChange={handleChange} userInput={userInput} />
-      <Results/>
+      <Results input={userInput} />
     </>
   )
 }
